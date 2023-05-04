@@ -1,2 +1,5 @@
 venv/
-.vscode
+.vscode/
+fetch_gis.spec
+dist/
+build/
