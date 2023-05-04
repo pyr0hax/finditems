@@ -6,4 +6,3 @@
 ### Portal Item Size.
 
 # It will then take all that information and consolidate it into a spreadsheet.
-Icon has been added for if you want to package it into your own exe file.
