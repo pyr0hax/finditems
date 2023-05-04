@@ -1,4 +1,4 @@
-# To run this tool, please edit the config.ini to use your relevant Portal credentials.
+# To run this tool, run it once and it will create a config.ini file. Populate the config.ini to use your relevant Portal credentials.
 # This will query the information on the portal such as:
 ### Portal item ID
 ### Portal Content name
