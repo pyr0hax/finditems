@@ -8,3 +8,4 @@
 ### Portal Item Size.
 
 # It will then take all that information and consolidate it into a spreadsheet.
+# Please note this will not work on Linux
