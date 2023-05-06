@@ -4,6 +4,9 @@ FindItems is a Python script that queries information from an ArcGIS Portal and 
 
 Please note that you should be using Python 3.7.6 for the ArcGIS Library to work. Additionally, you would need to do the same with any instances where you want to use the ArcGIS Library.
 
+Please skip the first part of the install guide if you are running Windows and just install the necessary modules by running:
+
+    pip install -r .\requirements.txt
 
 ## Installation
 
@@ -37,5 +40,3 @@ findItems will query the information on the portal, such as:
 - Portal Item Size
 
 It will then consolidate all that information into a spreadsheet.
-
-Note that findItems is not currently compatible with Linux.
