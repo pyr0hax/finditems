@@ -9,12 +9,13 @@ from sys import exit
 import tkinter as tk
 from tkinter import messagebox
 nowdate = datetime.now().strftime("%Y/%m/%d:%H:%M:%S")
+configFile = 'config.ini'
 
-if path.exists('config.ini'):
+if path.exists(configFile):
     config = ConfigParser()
-    config.read('config.ini')
+    config.read(configFile)
 else:
-    with open('config.ini', 'a') as f:
+    with open(configFile, 'a') as f:
         f.write("""[credentials]
 host = https://portal.example.com/webadaptor
 user = username
