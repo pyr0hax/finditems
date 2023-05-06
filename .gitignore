@@ -6,3 +6,4 @@ build/
 .venv/
 .vscode/
 .python-version
+config.ini
