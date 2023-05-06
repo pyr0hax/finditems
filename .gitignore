@@ -3,3 +3,6 @@ venv/
 fetch_gis.spec
 dist/
 build/
+.venv/
+.vscode/
+.python-version
