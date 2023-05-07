@@ -40,3 +40,4 @@ findItems will query the information on the portal, such as:
 - Portal Item Size
 
 It will then consolidate all that information into a spreadsheet.
+Please note that it will skip owners: esri_nav, esri_apps and esri.
