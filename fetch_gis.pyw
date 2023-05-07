@@ -8,6 +8,7 @@ from os import path
 from sys import exit
 import tkinter as tk
 from tkinter import messagebox
+
 nowdate = datetime.now().strftime("%Y/%m/%d:%H:%M:%S")
 configFile = 'config.ini'
 
@@ -39,29 +40,36 @@ workbook = Workbook()
 sheet = workbook.active
 sheet.title = "Portal Content"
 
-sheet["A1"] = "Item Name"
-sheet["B1"] = "Item Size (MB)"
+sheet["A1"] = "Item ID"
+sheet["B1"] = "Item Name"
 sheet["C1"] = "Item Owner"
-sheet["D1"] = "Item ID"
+sheet["D1"] = "Item Size (MB)"
 
 counter = 0
 
 def process_item(item, row):
     global counter
-    sheet.cell(row=row, column=1, value=item.title)
-    sheet.cell(row=row, column=2, value=Decimal(item.size)/ 1000000)
-    sheet.cell(row=row, column=3, value=item.owner)
-    sheet.cell(row=row, column=4, value=item.id)
-    counter += 1
-    with open('logger.txt', 'a') as f:
-        f.write(nowdate + ': ' + item.title + ' ' + 'Number: '  + str(counter) + '\n')
+    if item.owner not in ['esri_apps', 'esri_nav', 'esri']:
+        sheet.cell(row=row, column=1, value=item.id)
+        sheet.cell(row=row, column=2, value=item.title)
+        sheet.cell(row=row, column=3, value=item.owner)
+        sheet.cell(row=row, column=4, value=Decimal(item.size)/ 1000000)
+        counter += 1
+        with open('logger.txt', 'a') as f:
+            f.write(nowdate + ': ' + item.title + ' ' + 'Number: '  + str(counter) + '\n')
 
 num_threads = 8
 
 with concurrent.futures.ThreadPoolExecutor(max_workers=num_threads) as executor:
     futures = []
-    for row, item in enumerate(content, start=2):
-        futures.append(executor.submit(process_item, item, row))
+    row = 2
+    for item in content:
+        if item.owner not in ['esri_apps', 'esri_nav', 'esri']:
+            futures.append(executor.submit(process_item, item, row))
+            row += 1
+        else:
+            with open('logger.txt', 'a') as f:
+                f.write(nowdate + ': ' + item.title + ' ' + 'Skipped' + '\n')
     concurrent.futures.wait(futures)
 
 workbook.save("output.xlsx")

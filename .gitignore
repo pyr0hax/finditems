@@ -7,3 +7,5 @@ build/
 .vscode/
 .python-version
 config.ini
+*.txt
+*.xlsx
