@@ -30,7 +30,7 @@ After installing the necessary Linux library, install the required Python module
 
 ## Usage
 
-To run findItems, execute the script once. It will create a `config.ini` file. Populate the `config.ini` with your relevant Portal credentials.
+To use findItems, run the script once. This will generate a config.ini file. Next, fill in your relevant Portal credentials within the config.ini file. Finally, run the script again to start using findItems.
 
 findItems will query the information on the portal, such as:
 
