@@ -6,7 +6,7 @@ Please note that you should be using Python 3.7.6 for the ArcGIS Library to work
 
 ### Please skip the first part of the install guide if you are running Windows and just install the necessary modules by running:
 
-    pip install -r .\requirements_windows.txt
+    pip install -r .\requirements.txt
 
 ## Installation
 
@@ -25,7 +25,7 @@ Then, add Rust to your environmental variables by running:
 After installing the necessary Linux library, install the required Python modules by running:
 
     pip install --upgrade sip
-    pip install -r .\requirements_linux.txt
+    pip install -r .\requirements.txt
 
 
 ## Usage
