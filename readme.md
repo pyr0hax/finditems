@@ -2,11 +2,12 @@
 
 FindItems is a Python script that queries information from an ArcGIS Portal and consolidates it into a spreadsheet.
 
-Please note that you should be using Python 3.7.6 for the ArcGIS Library to work. Additionally, you would need to do the same with any instances where you want to use the ArcGIS Library.
+Please note that you should be using Python 3.9.16 for the ArcGIS Library to work. Additionally, you would need to do the same with any instances where you want to use the ArcGIS Library.
 
 ### Please skip the first part of the install guide if you are running Windows and just install the necessary modules by running:
 
-    pip install -r .\requirements.txt
+    pip install arcgis
+    pip install openpyxl
 
 ## Installation
 
@@ -14,7 +15,7 @@ To use FindItems, you need to install the following Linux library:
 
     sudo apt-get install libkrb5-dev
 
-You will also need to install the Rust programming language by running the following command:
+If there are complaints about the absence of Rust, you should install the Rust programming language by executing the provided command:
 
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
@@ -25,7 +26,9 @@ Then, add Rust to your environmental variables by running:
 After installing the necessary Linux library, install the required Python modules by running:
 
     pip install --upgrade sip
-    pip install -r .\requirements.txt
+    pip install arcgis
+    pip install openpyxl
+
 
 
 ## Usage
